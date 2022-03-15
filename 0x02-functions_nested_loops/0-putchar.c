@@ -1,3 +1,9 @@
+/*
+ * File: 0-main.c
+ * Auth: Brennan D Baraban
+ *
+ */
+
 #include "main.h"
 
 /**
