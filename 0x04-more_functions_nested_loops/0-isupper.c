@@ -17,4 +17,3 @@ int _isupper(int c)
 	return (0);
 	}
 }
-© 2022 GitHub, Inc.
