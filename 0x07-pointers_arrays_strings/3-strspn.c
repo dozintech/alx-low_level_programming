@@ -1,25 +1,27 @@
 #include "main.h"
 
 /**
- * _strspn - gets the length of a prefix substring.
- * @s: The string to be traversed.
- * @accept: set of bytes that're to be cross referenced
- * Return: Returns the number of bytes in the initial segment of s.
- */
+* _strspn - Gets the length of a prefix substring.
+* @s: String where substring will look.
+* @accept: Substring of accepted chars.
+* Return: Length of occurrence.
+*/
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i, j, p = 0;
+	unsigned int c = 0;
+	char *t = accept;
 
-	for (i = 0; accept[i] != '\0'; i++)
+	while (*s++)
 	{
-		for (j = 0; s[j] != '\0'; j++)
-		{
-			if (((s[i] >= 'a' && s[i] <= 'z') ||
-			     (s[i] >= 'A' && s[i] <= 'Z')) &&
-			    s[i] == accept[j])
-				p++;
-		}
+		while (*accept++)
+			if (*(s - 1) == *(accept - 1))
+			{
+				c++;
+				break;
+			}
+		if (!(*--accept))
+			break;
+		accept = t;
 	}
-
-	return (p);
+	return (c);
 }
