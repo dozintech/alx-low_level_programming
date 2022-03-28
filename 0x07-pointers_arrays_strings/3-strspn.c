@@ -4,7 +4,6 @@
  * _strspn - gets the length of a prefix substring.
  * @s: The string to be traversed.
  * @accept: set of bytes that're to be cross referenced
- *
  * Return: Returns the number of bytes in the initial segment of s.
  */
 unsigned int _strspn(char *s, char *accept)
