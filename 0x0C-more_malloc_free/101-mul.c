@@ -2,36 +2,30 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int find_len(char *str);
-char *create_xarray(int size);
-char *iterate_zeroes(char *str);
-void get_prod(char *prod, char *mult, int digit, int zeroes);
-void add_nums(char *final_prod, char *next_prod, int next_len);
-
 /**
- * find_len - Finds the length of a string.
- * @str: The string to be measured.
- *
- * Return: The length of the string.
+ * main - multiplies two positive numbers
+ * @argc: n arguments
+ * @argv: args
+ * Return: int
  */
-int find_len(char *str)
+int main(int argc, char *argv[])
 {
-	int len = 0;
+unsigned long mul;
+int i, j;
+	if (argc != 3)
+	{ printf("Error\n");
+	exit(98); }
+	for (i = 1; i < argc; i++)
+	{
+		for (j = 0; argv[i][j] != '\0'; j++)
+		{
+			if (argv[i][j] > 57 || argv[i][j] < 48)
+			{  printf("Error\n");
+			exit(98); }
+		}
 
-	while (*str++)
-		len++;
-
-	return (len);
+	}
+	mul = atol(argv[1]) *  atol(argv[2]);
+	printf("%lu\n", mul);
+return (0);
 }
-
-/**
- * create_xarray - Creates an array of chars and initializes it with
- *                 the character 'x'. Adds a terminating null byte.
- * @size: The size of the array to be initialized.
- *
- * Description: If there is insufficient space, the
- *              function exits with a status of 98.
- * Return: A pointer to the array.
- */
-char *create_xarray(int size)
-{
