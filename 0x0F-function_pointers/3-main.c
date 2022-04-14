@@ -1,26 +1,27 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "3-calc.h"
+#include <stdio.h>
 
 /**
- * main - operations between intergers
- * @argv: argument value array
- * @argc: argument counter
- * Return: result of the operation
+ * main - calculator
+ * @argc: size of argv
+ * @argv: array of arguments
+ * Return: answer
  */
 
 int main(int argc, char *argv[])
 {
-	int num1, num2, op;
-
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[3]);
-	op = (*get_op_func(argv[2]))(num1, num2);
-	printf("%d\n", op);
+
+	if (get_op_func(argv[2]))
+		printf("%d\n", get_op_func(argv[2])(atoi(argv[1]), atoi(argv[3])));
+	else
+	{
+		printf("Error\n");
+		exit(99);
+	}
 	return (0);
 }
