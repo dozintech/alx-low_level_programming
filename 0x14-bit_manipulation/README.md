@@ -1,2 +1,2 @@
-# 	Excercise on
-		# Bit manipulation
+# 	Bit manipulation
+		# With Excercises
